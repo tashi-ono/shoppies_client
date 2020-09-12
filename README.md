@@ -1,6 +1,8 @@
 # Project Description
 
-Shoppies Client is the frontend UI to the Shoppies App, a web application that searches for movies from OMDb that can be nominated for the Annual Shoppies Awards. Nominated movies can be saved and deleted from the Shoppies API database. (Note: Shoppies Awards are actually for ecommerce businesses, but for the sake of this internship application project, I am using movies.)
+Shoppies Client is the frontend UI to the Shoppies App, a web application that searches for movies from OMDb that can be nominated for The Shoppies - Movie Awards for Entrepreneurs. Nominated movies can be saved and deleted from the Shoppies API database.
+
+(Note: In reality, The Shoppies Awards, hosted by [TSC](https://www.tsc.ca/) nominates brands from their affiliated ecommerce store. For the purpose of this internship application project, I am using movies.)
 
 # Table of Contents
 
