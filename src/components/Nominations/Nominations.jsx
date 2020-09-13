@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import axios from "axios";
+import apiUrl from "../../apiConfig";
 
 const Nominations = ({ getNominatedList, nominated }) => {
   useEffect(() => {
@@ -8,7 +9,7 @@ const Nominations = ({ getNominatedList, nominated }) => {
 
   const removeNomination = async (unnominated) => {
     try {
-      await axios.delete(`http://localhost:3000/movies/${unnominated.id}`);
+      await axios.delete(`${apiUrl}/movies/${unnominated.id}`);
       getNominatedList();
     } catch (err) {
       console.error("Couldn't delete song from nominated list", err);

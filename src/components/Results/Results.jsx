@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Alert from "react-bootstrap/Alert";
+import apiUrl from "../../apiConfig";
 import axios from "axios";
 import Nominations from "../Nominations/Nominations";
 
@@ -9,7 +10,7 @@ const Results = ({ response, movies }) => {
 
   const getNominatedList = async () => {
     try {
-      let res = await axios.get(`http://localhost:3000/movies`);
+      let res = await axios.get(`${apiUrl}/movies`);
       setNominated(res.data);
     } catch (err) {
       console.error("Couldn't get nominated list", err);
@@ -20,7 +21,7 @@ const Results = ({ response, movies }) => {
   const addToNominated = async (nominatedMovie) => {
     // setNominated([...nominated, addMovie]);
     try {
-      await axios.post(`http://localhost:3000/movies`, {
+      await axios.post(`${apiUrl}/movies`, {
         ...nominatedMovie,
         isNominated: true,
       });
