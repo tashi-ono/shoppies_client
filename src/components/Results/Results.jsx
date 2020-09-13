@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Alert from "react-bootstrap/Alert";
 import axios from "axios";
 import Nominations from "../Nominations/Nominations";
 
@@ -24,38 +25,42 @@ const Results = ({ response, movies }) => {
         isNominated: true,
       });
       getNominatedList();
+      // setDisableButton(!disableButton);
     } catch (err) {
       console.error("Unable to add nominated movie", err);
     }
   };
   console.log("nominated movies", nominated);
 
-  let displayResults;
-  if (response === "True" && movies[0]) {
-    displayResults = movies.map((movie, index) => {
-      return (
-        <li className="movie" key={index}>
-          <span>{movie.Title}</span>
-          {/* <img className="imgPoster" src={movie.Poster} alt="movie.Title" /> */}
-          <span>({movie.Year})</span>
-          <button
-            disabled={nominated.length > 4}
-            onClick={() => addToNominated(movie)}
-          >
-            Nominate
-          </button>
-        </li>
-      );
-    });
-  } else if (movies === undefined) {
-    displayResults = <p>No results found</p>;
-  }
+  let displayResults = null;
 
+  if (movies === undefined) {
+    displayResults = <p>No results found</p>;
+  } else {
+    if (movies[0]) {
+      displayResults = movies.map((movie, index) => {
+        return (
+          <li className="movie" key={index}>
+            <span>{movie.Title}</span>
+            {/* <img className="imgPoster" src={movie.Poster} alt="movie.Title" /> */}
+            <span>({movie.Year})</span>
+            <button
+              // className={`nominateButton ${disableButton ? "disabled" : null}`}
+              disabled={nominated.length > 4}
+              onClick={() => addToNominated(movie)}
+            >
+              Nominate
+            </button>
+          </li>
+        );
+      });
+    }
+  }
   return (
     <div>
       <ul>{displayResults}</ul>
       {nominated.length === 5 ? (
-        <p>You've reached your max nominations!</p>
+        <Alert variant="success">You've reached your max nominations!</Alert>
       ) : null}
       <Nominations nominated={nominated} getNominatedList={getNominatedList} />
     </div>

@@ -6,7 +6,7 @@ Shoppies Client is the frontend UI to the Shoppies App, a web application that s
 
 # Table of Contents
 
-- [Setup](#setup)
+- [Project Link](#project-links)
 
 <!-- - [Usage](#usage) -->
 
@@ -16,7 +16,11 @@ Shoppies Client is the frontend UI to the Shoppies App, a web application that s
 
 - [Developer](#developer)
 
-# Setup
+# Project Links
+
+[Frontend Live Link]()
+[Backend Live Link]()
+[Backend Git Repo](https://github.com/tashi-ono/shoppies_api)
 
 ### Dependancies
 

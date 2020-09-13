@@ -15,6 +15,7 @@ const SearchBar = ({ setUserInput }) => {
   return (
     <form onSubmit={handleSubmit}>
       <label htmlFor="searchBar">Movie title</label>
+      <br />
       <input
         onChange={handleChange}
         type="search"

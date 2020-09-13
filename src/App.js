@@ -22,6 +22,7 @@ function App() {
       console.error("Could not fetch movies: ", err);
     }
   };
+  console.log("got movies", movies);
 
   const setUserInput = (input) => {
     // console.log("userInput", input);
@@ -32,9 +33,13 @@ function App() {
   return (
     <div className="App">
       <h1>Shoppies</h1>
+      <h4>Welcome to the Shoppies Awards!</h4>
+      <p>
+        Nominate <b>5</b> of your favorite movies.
+      </p>
       <SearchBar setUserInput={setUserInput} />
       <p> {response === "True" ? `Results for "${searchParam}"` : null}</p>
-      <Results response={response} movies={movies} />
+      <Results movies={movies} />
     </div>
   );
 }
