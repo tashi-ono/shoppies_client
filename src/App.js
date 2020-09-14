@@ -22,7 +22,7 @@ function App() {
       console.error("Could not fetch movies: ", err);
     }
   };
-  console.log("got movies", movies);
+  // console.log("got movies", movies);
 
   const setUserInput = (input) => {
     // console.log("userInput", input);

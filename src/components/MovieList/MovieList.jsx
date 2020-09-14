@@ -29,19 +29,18 @@ const MovieList = ({ movies, response, searchParam }) => {
       console.error("Unable to add nominated movie", err);
     }
   };
-  console.log("nominated movies", nominated);
+  // console.log("nominated movies", nominated);
 
   let displayResults = null;
 
   let nominatedTitles = nominated.map((item) => item.Title);
+  // console.log("nominatedTitles", nominatedTitles);
 
   if (movies === undefined) {
     displayResults = <p>No results found</p>;
   } else {
     if (movies[0]) {
       displayResults = movies.map((movie, index) => {
-        console.log("nominatedTitles", nominatedTitles);
-        console.log("nominatedTites include 65", nominatedTitles.includes(65));
         return (
           <li className="movie" key={index}>
             <span>{movie.Title}</span>

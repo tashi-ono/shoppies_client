@@ -6,7 +6,7 @@ import "./Nominations.scss";
 const Nominations = ({ getNominatedList, nominated }) => {
   useEffect(() => {
     getNominatedList();
-  }, []);
+  });
 
   const removeNomination = async (unnominated) => {
     try {
