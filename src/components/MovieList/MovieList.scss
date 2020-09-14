@@ -1,4 +1,5 @@
 .results-container {
+  background-color: rgba(255, 255, 255, 0.7);
   border: none;
   border-radius: 5px;
   box-shadow: 1px 1px 2px 2px rgba(0, 0, 0, 0.3);
@@ -26,5 +27,48 @@
 @media only screen and (min-width: 800px) {
   .results-container {
     max-width: 500px;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .all-movies-container {
+    display: grid;
+    gap: 5px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 40px 1fr;
+    grid-template-areas:
+      "alert alert"
+      "results nominations";
+  }
+
+  .alert {
+    grid-area: alert;
+    height: 50px;
+  }
+
+  .results-container {
+    grid-area: results;
+    margin-bottom: 50px;
+    max-width: 45vw;
+    padding-top: 10px;
+  }
+
+  .nominations-container {
+    grid-area: nominations;
+    max-width: 45vw;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .all-movies-container {
+    margin: 0 auto;
+    width: 65vw;
+  }
+  .results-container {
+    max-width: 600px;
+  }
+
+  .nominations-container {
+    max-width: 600px;
   }
 }

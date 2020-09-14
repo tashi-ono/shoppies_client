@@ -61,7 +61,7 @@ const MovieList = ({ movies, response, searchParam }) => {
     }
   }
   return (
-    <div className="movies-container">
+    <div className="all-movies-container">
       <div className="results-container">
         <p className="results-paragraph">
           {response === "True"
@@ -72,7 +72,9 @@ const MovieList = ({ movies, response, searchParam }) => {
         <ul>{displayResults}</ul>
       </div>
       {nominated.length === 5 ? (
-        <Alert variant="success">You've reached your max nominations!</Alert>
+        <Alert className="alert" variant="success">
+          You've reached your max nominations!
+        </Alert>
       ) : null}
       <Nominations nominated={nominated} getNominatedList={getNominatedList} />
     </div>
