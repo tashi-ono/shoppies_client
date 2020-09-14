@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import SearchBar from "./components/SearchBar/SearchBar";
-import Results from "./components/Results/Results";
+import MovieList from "./components/MovieList/MovieList";
 import axios from "axios";
-import "./App.css";
+import "./App.scss";
 
 function App() {
   const [movies, setMovies] = useState([]);
@@ -11,10 +11,10 @@ function App() {
 
   const myAPIKey = process.env.REACT_APP_API_KEY;
 
-  const getMovies = async (searchParam) => {
+  const getMovies = async (searchInput) => {
     try {
       let res = await axios.get(
-        `http://www.omdbapi.com/?apikey=${myAPIKey}&s=${searchParam}&type=movie`
+        `http://www.omdbapi.com/?apikey=${myAPIKey}&s=${searchInput}&type=movie`
       );
       setMovies(res.data.Search);
       setResponse(res.data.Response);
@@ -32,14 +32,18 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Shoppies</h1>
+      <h1>The Shoppies</h1>
       <h4>Welcome to the Shoppies Awards!</h4>
-      <p>
+      <p className="app-paragraph">
         Nominate <b>5</b> of your favorite movies.
       </p>
       <SearchBar setUserInput={setUserInput} />
-      <p> {response === "True" ? `Results for "${searchParam}"` : null}</p>
-      <Results movies={movies} />
+
+      <MovieList
+        movies={movies}
+        response={response}
+        searchParam={searchParam}
+      />
     </div>
   );
 }

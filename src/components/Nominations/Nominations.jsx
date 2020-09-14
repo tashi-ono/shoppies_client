@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import axios from "axios";
 import apiUrl from "../../apiConfig";
+import "./Nominations.scss";
 
 const Nominations = ({ getNominatedList, nominated }) => {
   useEffect(() => {
@@ -23,7 +24,7 @@ const Nominations = ({ getNominatedList, nominated }) => {
     displayNominated = nominated.map((movie, index) => {
       // console.log("map nom", movie);
       return (
-        <li className="nominatedMovie" key={index}>
+        <li className="nominated-movie" key={index}>
           <span>{movie.Title}</span>
           <span>({movie.Year})</span>
           <button onClick={() => removeNomination(movie)}>Remove</button>
@@ -32,7 +33,7 @@ const Nominations = ({ getNominatedList, nominated }) => {
     });
   }
   return (
-    <div>
+    <div className="nominations-container">
       <p>Nominations</p>
       <ul>{displayNominated}</ul>
     </div>

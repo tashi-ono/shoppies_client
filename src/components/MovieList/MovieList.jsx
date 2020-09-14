@@ -3,8 +3,9 @@ import Alert from "react-bootstrap/Alert";
 import apiUrl from "../../apiConfig";
 import axios from "axios";
 import Nominations from "../Nominations/Nominations";
+import "./MovieList.scss";
 
-const Results = ({ response, movies }) => {
+const MovieList = ({ movies, response, searchParam }) => {
   const [nominated, setNominated] = useState([]);
   // const [disableButton, setDisableButton] = useState(false);
 
@@ -46,6 +47,7 @@ const Results = ({ response, movies }) => {
             {/* <img className="imgPoster" src={movie.Poster} alt="movie.Title" /> */}
             <span>({movie.Year})</span>
             <button
+              className="nominate-button"
               // className={`nominateButton ${disableButton ? "disabled" : null}`}
               disabled={nominated.length > 4}
               onClick={() => addToNominated(movie)}
@@ -58,8 +60,16 @@ const Results = ({ response, movies }) => {
     }
   }
   return (
-    <div>
-      <ul>{displayResults}</ul>
+    <div className="movies-container">
+      <div className="results-container">
+        <p className="results-paragraph">
+          {response === "True"
+            ? `Results for "${searchParam}"`
+            : `Search Results`}
+        </p>
+
+        <ul>{displayResults}</ul>
+      </div>
       {nominated.length === 5 ? (
         <Alert variant="success">You've reached your max nominations!</Alert>
       ) : null}
@@ -68,4 +78,4 @@ const Results = ({ response, movies }) => {
   );
 };
 
-export default Results;
+export default MovieList;
