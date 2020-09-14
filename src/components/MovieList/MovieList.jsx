@@ -7,7 +7,6 @@ import "./MovieList.scss";
 
 const MovieList = ({ movies, response, searchParam }) => {
   const [nominated, setNominated] = useState([]);
-  // const [disableButton, setDisableButton] = useState(false);
 
   const getNominatedList = async () => {
     try {
@@ -20,14 +19,12 @@ const MovieList = ({ movies, response, searchParam }) => {
   // console.log("movies", movies);
 
   const addToNominated = async (nominatedMovie) => {
-    // setNominated([...nominated, addMovie]);
     try {
       await axios.post(`${apiUrl}/movies`, {
         ...nominatedMovie,
         isNominated: true,
       });
       getNominatedList();
-      // setDisableButton(!disableButton);
     } catch (err) {
       console.error("Unable to add nominated movie", err);
     }
@@ -36,11 +33,15 @@ const MovieList = ({ movies, response, searchParam }) => {
 
   let displayResults = null;
 
+  let nominatedTitles = nominated.map((item) => item.Title);
+
   if (movies === undefined) {
     displayResults = <p>No results found</p>;
   } else {
     if (movies[0]) {
       displayResults = movies.map((movie, index) => {
+        console.log("nominatedTitles", nominatedTitles);
+        console.log("nominatedTites include 65", nominatedTitles.includes(65));
         return (
           <li className="movie" key={index}>
             <span>{movie.Title}</span>
@@ -48,8 +49,9 @@ const MovieList = ({ movies, response, searchParam }) => {
             <span>({movie.Year})</span>
             <button
               className="nominate-button"
-              // className={`nominateButton ${disableButton ? "disabled" : null}`}
-              disabled={nominated.length > 4}
+              disabled={
+                nominated.length > 4 || nominatedTitles.includes(movie.Title)
+              }
               onClick={() => addToNominated(movie)}
             >
               Nominate
