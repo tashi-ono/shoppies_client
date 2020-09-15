@@ -11,13 +11,13 @@ function App() {
   const [searchParam, setSearchParam] = useState("");
   const [response, setResponse] = useState("");
   // const [totalResults, setTotalResults] = useState(null);
-  const [page, setPage] = useState(1);
+  // const [page, setPage] = useState(1);
 
   const getMovies = async (searchInput) => {
     const myAPIKey = process.env.REACT_APP_API_KEY;
     try {
       let res = await axios.get(
-        `http://www.omdbapi.com/?apikey=${myAPIKey}&s=${searchInput}&type=movie&page=${page}`
+        `http://www.omdbapi.com/?apikey=${myAPIKey}&s=${searchInput}&type=movie&page=1`
       );
       setMovies(res.data.Search);
       setResponse(res.data.Response);
