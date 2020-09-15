@@ -10,15 +10,18 @@ function App() {
   const [movies, setMovies] = useState([]);
   const [searchParam, setSearchParam] = useState("");
   const [response, setResponse] = useState("");
+  // const [totalResults, setTotalResults] = useState(null);
+  const [page, setPage] = useState(1);
 
   const getMovies = async (searchInput) => {
     const myAPIKey = process.env.REACT_APP_API_KEY;
     try {
       let res = await axios.get(
-        `http://www.omdbapi.com/?apikey=${myAPIKey}&s=${searchInput}&type=movie`
+        `http://www.omdbapi.com/?apikey=${myAPIKey}&s=${searchInput}&type=movie&page=${page}`
       );
       setMovies(res.data.Search);
       setResponse(res.data.Response);
+      // setTotalResults(res.data.totalResults);
     } catch (err) {
       console.error("Could not fetch movies: ", err);
     }

@@ -27,7 +27,12 @@ const Nominations = ({ getNominatedList, nominated }) => {
         <li className="nominated-movie" key={index}>
           <span>{movie.Title}</span>
           <span>({movie.Year})</span>
-          <button onClick={() => removeNomination(movie)}>Remove</button>
+          <button
+            className="remove-button"
+            onClick={() => removeNomination(movie)}
+          >
+            Remove
+          </button>
         </li>
       );
     });

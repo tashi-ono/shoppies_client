@@ -16,5 +16,9 @@
 
   a {
     text-decoration-line: underline;
+
+    &:hover {
+      color: #fee964;
+    }
   }
 }

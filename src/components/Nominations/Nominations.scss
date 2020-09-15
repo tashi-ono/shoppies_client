@@ -12,11 +12,18 @@
     font-weight: bold;
   }
 
-  button {
+  .remove-button {
     border: 1px solid darkgrey;
     border-radius: 3px;
+    font-weight: 600;
     margin: 5px;
     padding: 2px 10px;
+
+    &:hover {
+      background-color: #005b6e;
+      color: white;
+      transition: 0.3s ease-out;
+    }
   }
 }
 

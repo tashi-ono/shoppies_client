@@ -62,21 +62,26 @@ const MovieList = ({ movies, response, searchParam }) => {
   }
   return (
     <div className="all-movies-container">
-      <div className="results-container">
-        <p className="results-paragraph">
-          {response === "True"
-            ? `Results for "${searchParam}"`
-            : `Search Results`}
-        </p>
-
-        <ul>{displayResults}</ul>
-      </div>
       {nominated.length === 5 ? (
         <Alert className="alert" variant="success">
           You've reached your max nominations!
         </Alert>
       ) : null}
       <Nominations nominated={nominated} getNominatedList={getNominatedList} />
+      <div className="results-container">
+        <p className="results-paragraph">
+          {response === "True"
+            ? `Results for "${searchParam}"`
+            : `Search Results`}
+        </p>
+        <ul>{displayResults}</ul>
+        {/* {displayResults ? (
+          <span>
+            <button>Back</button>
+            <button>Next</button>
+          </span>
+        ) : null} */}
+      </div>
     </div>
   );
 };

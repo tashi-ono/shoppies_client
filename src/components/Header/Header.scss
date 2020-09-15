@@ -1,5 +1,5 @@
 .header {
-  padding: 10px 0;
+  padding: 0 0 10px;
   text-shadow: 2px 2px black;
 
   h1,
@@ -18,7 +18,7 @@
 }
 
 @media only screen and (min-width: 600px) {
-  h1 {
+  .header h1 {
     font-size: 3rem;
   }
 }
