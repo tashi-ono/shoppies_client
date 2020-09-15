@@ -1,14 +1,16 @@
-# Project Description
+# The Shoppies App
 
-Shoppies Client is the frontend UI to the Shoppies App, a web application that searches for movies from OMDb that can be nominated for The Shoppies - Movie Awards for Entrepreneurs. Nominated movies can be saved and deleted from the Shoppies API database.
+## Project Description
+
+[The Shoppies](https://shoppies-client-app.netlify.app/) is a web application that searches for movies from OMDb that can be nominated for The Shoppies, movie awards for entrepreneurs. Nominated movies can be saved and deleted from my [Shoppies API database](https://shoppies-api-app.herokuapp.com/movies).
 
 (Note: In reality, The Shoppies Awards, hosted by [TSC](https://www.tsc.ca/) nominates brands from their affiliated ecommerce store. For the purpose of this internship application project, I am using movies.)
 
-# Table of Contents
+<img src="https://res.cloudinary.com/gaseir526-tashiono/image/upload/v1600140222/Shoppies%20Assets/shoppies_gif_aqvxfn.gif" width="500"  />
 
-- [Project Link](#project-links)
+## Table of Contents
 
-<!-- - [Usage](#usage) -->
+- [Project Links](#project-links)
 
 - [Tech Stack](#tech-stack)
 
@@ -16,21 +18,15 @@ Shoppies Client is the frontend UI to the Shoppies App, a web application that s
 
 - [Developer](#developer)
 
-# Project Links
+## Project Links
 
-[Frontend Live Link]()
-[Backend Live Link]()
+[Frontend Live Link](https://shoppies-client-app.netlify.app/)
+
+[Backend Live Link](https://shoppies-api-app.herokuapp.com/movies)
+
 [Backend Git Repo](https://github.com/tashi-ono/shoppies_api)
 
-### Dependancies
-
-- Axios 0.20.0
-- Cors 2.8.5
-- Dotenv 8.2.0
-
-<!-- # Usage -->
-
-# Tech Stack
+## Tech Stack
 
 #### Frontend
 
@@ -38,13 +34,21 @@ Shoppies Client is the frontend UI to the Shoppies App, a web application that s
 
 #### Backend
 
-- Ruby Version 2.2.3
-- Rails Version 6.0.3.3
+- Ruby 2.2.3
+- Rails 6.0.3.3
 
-# APIs Used
+#### Dependancies
+
+- Axios 0.20.0
+- Cors 2.8.5
+- Dotenv 8.2.0
+- Node-Sass 4.14.1
+- React-Bootstrap 1.3.0
+
+## APIs Used
 
 - [OMDb API - The Open Movie Database](http://www.omdbapi.com/)
 
-# Developer
+## Developer
 
-Natasha Coen lives in Sonoma County, CA. You can find her on [LinkedIn](https://www.linkedin.com/in/natasha-sana-coen/) or on her portfolio [website](https://tashi-ono.github.io/portfolio/).
+Natasha Coen lives in Sonoma County, CA. You can find her on [LinkedIn](https://www.linkedin.com/in/natasha-sana-coen/) or on her [portfolio website](https://tashi-ono.github.io/portfolio/).
